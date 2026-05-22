@@ -1,0 +1,252 @@
+.acceso-pagina {
+    min-height: 100vh;
+    background-color: #0D0D0D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.acceso-card {
+    background-color: #1A1A1A;
+    border: 1px solid #222;
+    border-radius: 16px;
+    padding: 50px 44px;
+    width: 100%;
+    max-width: 460px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    position: relative;
+    overflow: hidden;
+}
+
+.acceso-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #E10600, transparent);
+}
+
+.acceso-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 32px;
+    color: #E10600;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.acceso-titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #F5F5F5;
+    margin-bottom: 8px;
+}
+
+.acceso-subtitulo {
+    font-size: 14px;
+    color: #AAAAAA;
+    margin-bottom: 36px;
+    line-height: 1.5;
+}
+
+.acceso-campo {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.acceso-icono-input {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #E10600;
+    font-size: 16px;
+}
+
+.acceso-contador-digits {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #555;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.acceso-input {
+    width: 100%;
+    background-color: #141414;
+    border: 1px solid #222;
+    color: #F5F5F5;
+    padding: 14px 50px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 4px;
+    outline: none;
+    transition: border-color 0.2s;
+    text-align: center;
+}
+
+.acceso-input:focus {
+    border-color: #E10600;
+}
+
+.acceso-input::placeholder {
+    color: #444;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+}
+
+.acceso-input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.acceso-boton {
+    width: 100%;
+    background-color: #E10600;
+    color: #fff;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.2s, transform 0.1s, opacity 0.2s;
+    margin-bottom: 28px;
+}
+
+.acceso-boton:hover:not(:disabled) {
+    background-color: #c40400;
+    transform: translateY(-1px);
+}
+
+.acceso-boton:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Resultado */
+.acceso-resultado {
+    border-radius: 12px;
+    padding: 28px 24px 20px;
+    border: 1px solid;
+    animation: aparecer 0.3s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.acceso-resultado-icono {
+    font-size: 52px;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.acceso-resultado-titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.acceso-resultado-mensaje {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Barra de progreso regresiva */
+.acceso-reset-bar {
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.acceso-reset-progreso {
+    height: 100%;
+    width: 100%;
+    background-color: currentColor;
+    border-radius: 4px;
+    animation: vaciar 3s linear forwards;
+}
+
+@keyframes vaciar {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0%;
+    }
+}
+
+.acceso-reset-texto {
+    font-size: 12px;
+    opacity: 0.6;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Variantes */
+.resultado-acceso {
+    background-color: rgba(0, 200, 80, 0.08);
+    border-color: #00c850;
+    color: #00c850;
+}
+
+.resultado-vencido {
+    background-color: rgba(255, 180, 0, 0.08);
+    border-color: #ffb400;
+    color: #ffb400;
+}
+
+.resultado-no-identificado {
+    background-color: rgba(225, 6, 0, 0.08);
+    border-color: #E10600;
+    color: #E10600;
+}
+
+@media (max-width: 480px) {
+    .acceso-card {
+        padding: 36px 20px;
+    }
+
+    .acceso-logo {
+        font-size: 26px;
+    }
+
+    .acceso-titulo {
+        font-size: 18px;
+    }
+
+    .acceso-input {
+        font-size: 18px;
+        letter-spacing: 3px;
+    }
+}

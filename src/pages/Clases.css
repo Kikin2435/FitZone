@@ -1,0 +1,366 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0D0D0D;
+    color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: #111;
+    border-bottom: 1px solid #222;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 26px;
+    color: #E10600;
+}
+
+nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #F5F5F5;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav .active {
+    color: #C9D3DC;
+    text-shadow: 0 0 6px rgba(201, 211, 220, 0.55);
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+/* Hamburger oculto en desktop */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: #F5F5F5;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.clases {
+    padding: 80px 60px;
+    text-align: center;
+}
+
+.clases h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 46px;
+    margin-bottom: 12px;
+    color: #E10600;
+}
+
+.subtitulo {
+    font-size: 19px;
+    margin-bottom: 50px;
+    color: #bbb;
+    letter-spacing: 0.3px;
+}
+
+.grid-clases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 150px;
+}
+
+.card {
+    background-color: #1A1A1A;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #222;
+    text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.card i {
+    font-size: 50px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.card h2 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+    color: #E10600;
+    font-size: 28px;
+    letter-spacing: 0.5px;
+}
+
+.card p {
+    margin-bottom: 12px;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+}
+
+.card button {
+    display: none;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+footer {
+    background-color: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 25px;
+    margin-top: auto;
+    border-top: 1px solid #222;
+}
+
+
+/* ============================================
+   BREAKPOINT: TABLET — 900px
+   Grid 2 columnas, nav hamburger con desplazamiento
+   ============================================ */
+@media (max-width: 900px) {
+
+    /* Header con flex-wrap para que el nav empuje el contenido abajo */
+    .header {
+        padding: 16px 30px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 22px;
+        flex: 1;
+    }
+
+    /* Mostrar hamburger en tablet */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Nav oculto por defecto, ocupa todo el ancho al abrirse */
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        order: 3;
+        /* Va después del logo y el botón */
+        border-top: 1px solid #222;
+        padding: 12px 0 4px;
+        margin-top: 12px;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    nav a {
+        margin-left: 0;
+        padding: 10px 4px;
+        font-size: 15px;
+        border-bottom: 1px solid #1e1e1e;
+    }
+
+    nav a:last-child {
+        border-bottom: none;
+    }
+
+    .clases {
+        padding: 60px 30px;
+    }
+
+    .clases h1 {
+        font-size: 36px;
+    }
+
+    .subtitulo {
+        font-size: 16px;
+        margin-bottom: 36px;
+    }
+
+    .grid-clases {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 80px;
+    }
+
+    .card {
+        padding: 24px 20px;
+    }
+
+    .card i {
+        font-size: 40px;
+        margin-bottom: 14px;
+    }
+
+    .card h2 {
+        font-size: 22px;
+        margin-bottom: 14px;
+    }
+
+    .card p {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    /* Botón de reserva visible en tablet */
+    .card button {
+        display: inline-block;
+        margin-top: 16px;
+        padding: 10px 24px;
+        background-color: #E10600;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .card button:hover {
+        background-color: #b30500;
+    }
+
+    footer {
+        font-size: 13px;
+        padding: 20px;
+    }
+}
+
+
+/* ============================================
+   BREAKPOINT: MÓVIL — 480px
+   Cards horizontales, nav hamburger, 1 columna
+   ============================================ */
+@media (max-width: 480px) {
+
+    /* Header */
+    .header {
+        padding: 14px 20px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    /* Sección principal */
+    .clases {
+        padding: 40px 16px;
+        text-align: left;
+    }
+
+    .clases h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .subtitulo {
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 28px;
+    }
+
+    /* Cards: layout horizontal (icono a la izquierda, texto a la derecha) */
+    .grid-clases {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-top: 0;
+    }
+
+    .card {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 18px 16px;
+        text-align: left;
+        border-radius: 10px;
+        transform: none !important;
+        /* Desactiva hover lift en móvil */
+    }
+
+    /* Columna izquierda: icono */
+    .card i {
+        font-size: 34px;
+        color: #E10600;
+        margin-bottom: 0;
+        flex-shrink: 0;
+        width: 44px;
+        text-align: center;
+    }
+
+    /* Columna derecha: contenido */
+    .card-content {
+        flex: 1;
+    }
+
+    .card h2 {
+        font-size: 18px;
+        margin-bottom: 6px;
+        color: #F5F5F5;
+    }
+
+    .card p {
+        font-size: 12px;
+        margin-bottom: 4px;
+        color: #aaa;
+    }
+
+    /* Botón de reserva full-width en móvil */
+    .card button {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px 0;
+        background-color: #E10600;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .card button:hover {
+        background-color: #b30500;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 16px;
+    }
+}
